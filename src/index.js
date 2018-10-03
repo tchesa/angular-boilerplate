@@ -1,11 +1,15 @@
 'use strict'
 
-import render from './app'
+// import render from './app'
 
-render()
+import angular from 'angular'
+import router from 'angular-ui-router'
+import home from './features/home'
 
-if (module.hot) {
-  module.hot.accept('./app', () => {
-    render()
+angular.module('app', [router, home]).config(['$urlRouterProvider', '$locationProvider', function ($urlRouterProvider, $locationProvider) {
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
   })
-}
+  $urlRouterProvider.otherwise('/')
+}])

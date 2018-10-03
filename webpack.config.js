@@ -34,7 +34,8 @@ module.exports = {
         exclude: /node_modules/,
         include: /src/,
         loader: 'babel-loader'
-      }
+      },
+      { test: /\.html$/, loader: "html-loader" }
     ]
   }
 }
