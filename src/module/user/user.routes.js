@@ -11,14 +11,14 @@ export default function routes($stateProvider) {
   }).state('user.login', {
     url: '/login',
     title: 'Login',
-    template: require('./login.html'),
+    template: require('./login/login.html'),
     controller: 'LoginController'
   }).state('user.signup', {
     url: '/signup',
     title: 'Signup',
-    template: require('./signup.html'),
-    controller: 'LoginController'
-  });
+    template: require('./signup/signup.html'),
+    controller: 'SignupController'
+  })
 
   // $stateProvider.state('user', {
   //   url: '/user',

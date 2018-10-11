@@ -1,6 +1,6 @@
 'use strict'
 
-routes.$inject = ['$stateProvider'];
+routes.$inject = ['$stateProvider']
 
 export default function routes($stateProvider) {
   $stateProvider.state('home', {
@@ -8,5 +8,5 @@ export default function routes($stateProvider) {
     template: require('./home.html'),
     controller: 'HomeController',
     controllerAs: 'home'
-  });
+  })
 }
