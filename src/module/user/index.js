@@ -7,7 +7,7 @@ import routing from './user.routes'
 import LoginController from './login/login.controller'
 import SignupController from './signup/signup.controller'
 
-export default angular.module('app.user', [router])
+export default angular.module('app.user', [])
   .config(routing)
   .controller('LoginController', LoginController)
   .controller('SignupController', SignupController)

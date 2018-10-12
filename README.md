@@ -1,7 +1,7 @@
 Angular boilerplate
 
 TODO
-* css processor (sass)
+* css processor (sass/styl)
 * angular animate
 * uib-bootstrap
 * material design/layout template

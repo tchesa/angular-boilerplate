@@ -2,6 +2,7 @@
 
 const path = require('path')
 const webpack = require('webpack')
+
 const port = 3000
 
 module.exports = {
@@ -30,13 +31,19 @@ module.exports = {
       //   loader: 'standard-loader',
       //   enforce: 'pre'
       // },
-      {
+      { /* babel */
         test: /\.js$/,
         exclude: /node_modules/,
         include: /src/,
         loader: 'babel-loader'
       },
-      { test: /\.html$/, loader: "html-loader" }
+      {
+        test: /\.html$/, loader: 'html-loader'
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
     ]
   }
 }
