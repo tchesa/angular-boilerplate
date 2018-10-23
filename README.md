@@ -1,4 +1,4 @@
-Angular boilerplate
+AngularJS boilerplate
 
 TODO
 * css processor (sass/styl)
