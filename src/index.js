@@ -1,17 +1,17 @@
-'use strict'
+// 'use strict
 
-import angular from 'angular'
-import router from 'angular-ui-router'
-import animate from 'angular-animate'
-import aria from 'angular-aria'
-import messages from 'angular-messages'
-import material from 'angular-material'
+import angular from 'angular';
+import router from 'angular-ui-router';
+import animate from 'angular-animate';
+import aria from 'angular-aria';
+import messages from 'angular-messages';
+import material from 'angular-material';
 
-import home from './module/home'
-import user from './module/user'
-import hello from './module/hello'
+import home from './module/home';
+import user from './module/user';
+import hello from './module/hello';
 
-import "./styles/main.scss"
+import './styles/main.scss';
 
 angular
   .module('app', [
@@ -22,12 +22,12 @@ angular
     material,
     home,
     user,
-    hello
+    hello,
   ])
-  .config(['$urlRouterProvider', '$locationProvider', function ($urlRouterProvider, $locationProvider) {
+  .config(['$urlRouterProvider', '$locationProvider', function appConfig($urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode({
       enabled: true,
-      requireBase: false
-    })
-    $urlRouterProvider.otherwise('/404')
-  }])
+      requireBase: false,
+    });
+    $urlRouterProvider.otherwise('/404');
+  }]);

@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "lint": "eslint src; exit 0"
   },
   "name": "angular-boilerplate",
   "version": "1.0.0",
@@ -22,6 +23,10 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^1.0.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
     "html-loader": "^0.5.5",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
@@ -30,6 +35,6 @@
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.9"
   },
-  "author": "Cesar Antunes",
+  "author": "tchesa",
   "license": "Usemobile"
 }

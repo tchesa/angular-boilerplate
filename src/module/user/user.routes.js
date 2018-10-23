@@ -1,8 +1,6 @@
 'use strict'
 
-routes.$inject = ['$stateProvider']
-
-export default function routes($stateProvider) {
+const routes = function routes($stateProvider) {
   $stateProvider.state('user', {
     url: '/user',
     title: 'User',
@@ -12,18 +10,15 @@ export default function routes($stateProvider) {
     url: '/login',
     title: 'Login',
     template: require('./login/login.html'),
-    controller: 'LoginController'
+    controller: 'LoginController',
   }).state('user.signup', {
     url: '/signup',
     title: 'Signup',
     template: require('./signup/signup.html'),
-    controller: 'SignupController'
-  })
+    controller: 'SignupController',
+  });
+};
 
-  // $stateProvider.state('user', {
-  //   url: '/user',
-  //   title: 'User',
-  //   template: require('./login.html'),
-  //   controller: 'LoginController'
-  // })
-}
+routes.$inject = ['$stateProvider'];
+
+export default routes;

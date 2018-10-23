@@ -1,9 +1,9 @@
 'use strict'
 
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
-const port = 3000
+const port = 3000;
 
 module.exports = {
   mode: 'development',
@@ -12,38 +12,38 @@ module.exports = {
     // 'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:' + port,
     'webpack/hot/only-dev-server',
-    path.join(__dirname, 'src', 'index')
+    path.join(__dirname, 'src', 'index'),
   ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/dist/'
+    publicPath: '/dist/',
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
-      // {
-      //   test: /\.js$/,
-      //   exclude: /node_modules/,
-      //   include: /src/,
-      //   loader: 'standard-loader',
-      //   enforce: 'pre'
-      // },
+      { /* eslint */
+        test: /\.js$/,
+        exclude: /node_modules/,
+        include: /src/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+      },
       { /* babel */
         test: /\.js$/,
         exclude: /node_modules/,
         include: /src/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
-        test: /\.html$/, loader: 'html-loader'
+        test: /\.html$/, loader: 'html-loader',
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      }
-    ]
-  }
-}
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
+  },
+};
