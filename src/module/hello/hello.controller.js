@@ -1,7 +1,9 @@
-'use strict'
+// 'use strict';
+
+const HelloController = function HelloController($scope) {
+  $scope.name = 'World';
+};
 
 HelloController.$inject = ['$scope'];
 
-export default function HelloController($scope) {
-  $scope.name = 'World';
-}
+export default HelloController;

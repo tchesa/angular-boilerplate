@@ -1,7 +1,9 @@
-'use strict'
+// 'use strict';
 
-HomeController.$inject = ['$scope']
+const HomeController = function HomeController($scope) {
+  $scope.name = 'World';
+};
 
-export default function HomeController($scope) {
-  $scope.name = 'World'
-}
+HomeController.$inject = ['$scope'];
+
+export default HomeController;
