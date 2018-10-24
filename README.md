@@ -2,12 +2,10 @@ AngularJS boilerplate
 
 TODO
 * css processor (sass/styl)
-* angular animate
 * uib-bootstrap
 * material design/layout template
 * screen loader
 * session control/authentication
-* linter (eslint)
 * unit test (jest)
 
 Often used packages

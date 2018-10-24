@@ -1,5 +1,6 @@
-// 'use strict
+// 'use strict';
 
+// dependencies
 import angular from 'angular';
 import router from 'angular-ui-router';
 import animate from 'angular-animate';
@@ -7,10 +8,12 @@ import aria from 'angular-aria';
 import messages from 'angular-messages';
 import material from 'angular-material';
 
+// modules
 import home from './module/home';
 import user from './module/user';
 import hello from './module/hello';
 
+// styles
 import './styles/main.scss';
 
 angular

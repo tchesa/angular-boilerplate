@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict';
 
 const path = require('path');
 const webpack = require('webpack');
@@ -10,7 +10,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     // 'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:' + port,
+    `webpack-dev-server/client?http://localhost:${port}`,
     'webpack/hot/only-dev-server',
     path.join(__dirname, 'src', 'index'),
   ],

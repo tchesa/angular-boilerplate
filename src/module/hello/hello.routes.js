@@ -1,12 +1,16 @@
-'use strict'
+// 'use strict';
 
-routes.$inject = ['$stateProvider']
+const helloLayout = require('./hello.html');
 
-export default function routes($stateProvider) {
+const routes = function routes($stateProvider) {
   $stateProvider.state('hello', {
     url: '/hello',
-    template: require('./hello.html'),
+    template: helloLayout,
     controller: 'HelloController',
-    controllerAs: 'hello'
-  })
-}
+    controllerAs: 'hello',
+  });
+};
+
+routes.$inject = ['$stateProvider'];
+
+export default routes;

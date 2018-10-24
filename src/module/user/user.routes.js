@@ -1,20 +1,24 @@
-'use strict'
+// 'use strict';
+
+const userLayout = require('./user.layout.html');
+const loginLayout = require('./login/login.html');
+const signupLayout = require('./signup/signup.html');
 
 const routes = function routes($stateProvider) {
   $stateProvider.state('user', {
     url: '/user',
     title: 'User',
     abstract: true,
-    template: require('./user.layout.html'),
+    template: userLayout,
   }).state('user.login', {
     url: '/login',
     title: 'Login',
-    template: require('./login/login.html'),
+    template: loginLayout,
     controller: 'LoginController',
   }).state('user.signup', {
     url: '/signup',
     title: 'Signup',
-    template: require('./signup/signup.html'),
+    template: signupLayout,
     controller: 'SignupController',
   });
 };
