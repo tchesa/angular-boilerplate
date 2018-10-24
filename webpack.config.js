@@ -2,7 +2,11 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+// const devMode = process.env.NODE_ENV !== 'production';
+const devMode = true;
 const port = 3000;
 
 module.exports = {
@@ -19,9 +23,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/dist/',
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
   module: {
     rules: [
       { /* eslint */
@@ -41,9 +42,44 @@ module.exports = {
         test: /\.html$/, loader: 'html-loader',
       },
       {
-        test: /\.(sa|sc|c)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.(s?[ac]ss|css)$/,
+        exclude: /node_modules/,
+        use: [
+          'css-hot-loader',
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: {
+                safe: true,
+              },
+            },
+          },
+          'sass-loader',
+        ],
       },
     ],
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    // new ExtractTextPlugin('styles.css'),
+    new MiniCssExtractPlugin({
+      filename: 'bundle.css',
+    }),
+  ],
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({}),
+    ],
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.(sa|sc|c)ss$/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
   },
 };
