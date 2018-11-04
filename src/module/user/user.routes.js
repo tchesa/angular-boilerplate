@@ -1,5 +1,3 @@
-// 'use strict';
-
 const userLayout = require('./user.layout.html');
 const loginLayout = require('./login/login.html');
 const signupLayout = require('./signup/signup.html');

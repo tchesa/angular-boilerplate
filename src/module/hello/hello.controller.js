@@ -1,5 +1,3 @@
-// 'use strict';
-
 const HelloController = function HelloController($scope) {
   $scope.name = 'World';
 };

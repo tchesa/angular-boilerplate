@@ -1,5 +1,3 @@
-// 'use strict';
-
 const homeLayout = require('./home.html');
 
 const routes = function routes($stateProvider) {

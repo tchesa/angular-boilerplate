@@ -1,4 +1,3 @@
-// 'use strict';
 
 // dependencies
 import angular from 'angular';
@@ -27,10 +26,14 @@ angular
     user,
     hello,
   ])
-  .config(['$urlRouterProvider', '$locationProvider', function appConfig($urlRouterProvider, $locationProvider) {
-    $locationProvider.html5Mode({
-      enabled: true,
-      requireBase: false,
-    });
-    $urlRouterProvider.otherwise('/404');
-  }]);
+  .config([
+    '$urlRouterProvider',
+    '$locationProvider',
+    function appConfig($urlRouterProvider, $locationProvider) {
+      $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false,
+      });
+      $urlRouterProvider.otherwise('/404');
+    },
+  ]);
