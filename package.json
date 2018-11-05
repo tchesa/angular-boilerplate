@@ -2,7 +2,7 @@
   "scripts": {
     "start": "webpack-dev-server --config=config/webpack.dev.js",
     "dev": "webpack-dev-server --config=config/webpack.dev.js",
-    "build": "webpack --config=config/webpack.dev.js",
+    "build": "webpack --config=config/webpack.prod.js",
     "lint": "eslint src; exit 0"
   },
   "name": "angular-boilerplate",
@@ -16,7 +16,9 @@
     "angular-aria": "^1.7.5",
     "angular-material": "^1.1.10",
     "angular-messages": "^1.7.5",
-    "angular-ui-router": "^1.0.20"
+    "angular-ui-router": "^1.0.20",
+    "mini-css-extract-plugin": "^0.4.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

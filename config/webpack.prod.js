@@ -1,6 +1,7 @@
 
 const path = require('path');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const port = 8080;
 
@@ -8,7 +9,7 @@ module.exports = {
   entry: {
     main: './src/index.js',
   },
-  mode: 'development',
+  mode: 'production',
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, '../dist'),
@@ -80,6 +81,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCSSExtractPlugin(),
+    new OptimizeCSSAssetsPlugin(),
+    new MiniCSSExtractPlugin({
+      filename: '[name].css',
+    }),
   ],
 };
