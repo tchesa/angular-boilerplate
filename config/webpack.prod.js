@@ -3,8 +3,6 @@ const path = require('path');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const port = 8080;
-
 module.exports = {
   entry: {
     main: './src/index.js',
@@ -14,12 +12,6 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, '../dist'),
     // publicPath: '/',
-  },
-  devServer: {
-    port,
-    // contentBase: 'dist',
-    // index: '../index.html'
-    // overlay: true,
   },
   module: {
     rules: [

@@ -16,8 +16,7 @@ module.exports = {
   },
   devServer: {
     port,
-    // contentBase: 'dist',
-    // index: '../index.html'
+    contentBase: 'dist',
     // overlay: true,
   },
   module: {
@@ -41,7 +40,13 @@ module.exports = {
       { // sass
         test: /\.(s?[ac]ss|css)$/,
         use: [
-          { loader: MiniCSSExtractPlugin.loader },
+          {
+            // loader: 'style-loader',
+            loader: MiniCSSExtractPlugin.loader,
+            // options: {
+            //   publicPath: '/',
+            // },
+          },
           { loader: 'css-loader' },
           { loader: 'sass-loader' },
         ],
@@ -80,6 +85,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCSSExtractPlugin(),
+    new MiniCSSExtractPlugin({
+      filename: '[name].css',
+    }),
   ],
 };
