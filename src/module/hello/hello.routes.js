@@ -1,9 +1,9 @@
-const helloLayout = require('./hello.html');
+// const helloLayout = require('./hello.html');
 
 const routes = function routes($stateProvider) {
   $stateProvider.state('hello', {
     url: '/hello',
-    template: helloLayout,
+    template: 'hello.html',
     controller: 'HelloController',
     controllerAs: 'hello',
   });

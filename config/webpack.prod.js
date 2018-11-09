@@ -15,13 +15,13 @@ module.exports = {
   },
   module: {
     rules: [
-      { // eslint
-        test: /\.js$/,
-        exclude: /node_modules/,
-        include: /src/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-      },
+      // { // eslint
+      //   test: /\.js$/,
+      //   exclude: /node_modules/,
+      //   include: /src/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      // },
       { // babel
         test: /\.js$/,
         use: [

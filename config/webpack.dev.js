@@ -11,8 +11,9 @@ module.exports = {
   mode: 'development',
   output: {
     filename: '[name].bundle.js',
+    // chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, '../dist'),
-    // publicPath: '/',
+    // publicPath: '../dist/',
   },
   devServer: {
     port,
@@ -21,19 +22,18 @@ module.exports = {
   },
   module: {
     rules: [
-      { // eslint
-        test: /\.js$/,
-        exclude: /node_modules/,
-        include: /src/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-      },
+      // { // eslint
+      //   test: /\.js$/,
+      //   exclude: /node_modules/,
+      //   include: /src/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      // },
       { // babel
         test: /\.js$/,
         use: [
-          {
-            loader: 'babel-loader',
-          },
+          { loader: 'babel-loader' },
+          { loader: 'angular-router-loader' },
         ],
         exclude: /node_modules/,
       },
@@ -54,15 +54,15 @@ module.exports = {
       {
         test: /\.html$/,
         use: [
-          // {
-          //   loader: 'file-loader',
-          //   options: {
-          //     name: '[name].html',
-          //   },
-          // },
-          // {
-          //   loader: 'extract-loader',
-          // },
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'views/[name].html',
+            },
+          },
+          {
+            loader: 'extract-loader',
+          },
           {
             loader: 'html-loader',
             options: {
