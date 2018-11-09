@@ -7,10 +7,10 @@ import aria from 'angular-aria';
 import messages from 'angular-messages';
 import material from 'angular-material';
 import ngRoute from 'angular-route';
-import lazyload from 'oclazyload';
+// import lazyload from 'oclazyload';
 // console.log(lazyload);
 // modules
-import route from './route';
+import route from './core/router';
 import home from './module/home';
 import user from './module/user';
 import hello from './module/hello';
@@ -35,10 +35,3 @@ angular
   //   '$urlRouterProvider',
   //   '$locationProvider',
   //   function appConfig($urlRouterProvider, $locationProvider) {
-  //     $locationProvider.html5Mode({
-  //       enabled: true,
-  //       requireBase: false,
-  //     });
-  //     $urlRouterProvider.otherwise('/404');
-  //   },
-  // ]);
