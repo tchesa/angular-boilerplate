@@ -1,4 +1,3 @@
-
 const RouterProvider = function RouterProvider($locationProvider, $stateProvider, $urlRouterProvider) {
   // $locationProvider.html5Mode({
   //   enabled: true,
@@ -8,7 +7,7 @@ const RouterProvider = function RouterProvider($locationProvider, $stateProvider
 
   const config = {
     // The paths where html template resides
-    viewsBasePath: './views/',
+    viewsBasePath: 'views/',
     // Automatically prepend views path to all templatesUrl?
     useViewsBasePath: true,
     // Set the following to true to enable the HTML5 Mode
@@ -101,7 +100,7 @@ const RouterProvider = function RouterProvider($locationProvider, $stateProvider
           }
 
           // Creates a promise chain for each argument
-          for (let i = 0, len = args.length; i < len; i += 1) {
+          for (let i = 0, len = args.length; i < len; i++) {
             promiseChain = andThen(args[i]);
           }
           return promiseChain;
